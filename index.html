@@ -3,10 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Proyecto IMT2200 12</title>
+    <!-- SECCIÓN: Estilos -->
+    <style>
+        body {
+            font-family: "Fira Sans", Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #EDEDED;
+            color: #333;
+        }
+
+        header,
+        section,
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #8E7CC3;
+            border-radius: 5px;
+            background-color: #FFF;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #BEBEBE;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(221, 221, 221, 0.7);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        h1,
+        h2,
+        p,
+        li {
+            margin-bottom: 10px;
+            color: #512DA8
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenidos a mi página web!</h1>
-    <p>Este es un sitio web simple hospedado en GitHub Pages.</p>
+    <!-- SECCIÓN: Título -->
+    <header>
+        <h1>Proyecto de Ciencia de Datos, Grupo 12</h1>
+        <h1>Analisis SIMCE en el rendimiento escolar en Chile</h1>
+
+    </header>
+
+    <!-- SECCIÓN: Contexto y Motivación (Agustín) -->
+    <section id="contexto-motivacion">
+        <h2>Contexto y Motivación</h2>
+        <p>
+            La educación es una herramienta que abre muchas ventanas, pero su mala administración puede 
+            dejar a muchos en desigualdad de oportunidades, incluso llegando a reflejar las inequidades 
+            sociales de un país. En nuestro país, Chile, sabemos que hay un esfuerzo de parte del gobierno 
+            en mejorar nuestro sistema, por ejemplo con las ya mencionadas evaluaciones SIMCE. Realmente 
+            nos interesa contribuir al mejoramiento del sistema de educación ya que juega un papel importante 
+            en el acceso a educación superior y al de un empleo digno.
+        </p>
+        <p>
+            Las cifras que vamos a analizar no son solo informes. Representan historias de niños y jóvenes 
+            con realidades muy distintas. Queremos entender el impacto de factores como vulnerabilidad y 
+            ruralidad afectan los puntajes y aprendizajes de los estudiantes e incluso evidenciar si al pasar 
+            del tiempo estas diferencias se mantienen.
+        </p>
+        <p>
+            Deseamos generar un cambio a través de nuestro análisis. Es muy fácil llegar y ver que existen 
+            desigualdades en el sistema educativo, pero queremos profundizar en el origen de estos problemas. 
+            Nuestra motivación existe en investigar las posibles disparidades del sistema de educación usando 
+            bases de datos públicas del gobierno y así saber qué áreas clave necesitan un enfoque de esfuerzos 
+            para potencialmente mejorar el nivel de educación. La educación es el arma más poderosa que puedes 
+            usar para cambiar el mundo." (Mandela).
+        </p>
+    </section>
+
+    <!-- SECCIÓN: Información Recolectada (Juan) -->
+    <section id="informacion-recolectada">
+        <h2>2. Información Recolectada</h2>
+<p>El proyecto lo desarrollamos utilizando Python en varios Jupyter Notebooks, 
+    empleando diversas librerías especializadas en Ciencia de Datos, como 
+    <strong>Pandas</strong>, <strong>Numpy</strong>, <strong>Matplotlib</strong>, 
+    <strong>Seaborn</strong>
+
+<p>La información que utilizamos fue obtenida directamente de la página oficial 
+    del Ministerio de Educación, que contiene los puntajes SIMCE a nivel nacional, 
+    junto con otras variables valiosas que nos permiten realizar comparaciones 
+    detalladas y precisas para nuestro análisis. Los datos recolectados fueron los siguientes:</p>
+
+
+    </section>
+
+    <!-- SECCIÓN: Procesamiento de Datos (Juan) -->
+    <section id="procesamiento-datos">
+        <h2>3. Procesamiento de Datos</h2>
+        <p>Explica los métodos que utilizaste para procesar la información recolectada.</p>
+    </section>
+
+    <!-- SECCIÓN: Análisis de los Resultados (Agustín) -->
+    <section id="analisis-resultados">
+        <h2>4. Análisis de los Resultados</h2>
+        <p>Aquí puedes detallar los hallazgos más importantes de tu análisis.</p>
+    </section>
+
+    <!-- SECCIÓN: Qué Podría Salir Mal (Juan) -->
+    <section id="que-podria-salir-mal">
+        <h2>Qué Podría Salir Mal?</h2>
+        <p>
+            Puede que la limitación de datos, especialmente post-pandemia, ya que llevamos muy poco tiempo 
+            pasado después de aquella época, nos dé datos que no necesariamente reflejen la situación, ya sea 
+            actual o en un par de años más. También cabe destacar que hay más áreas que solo la matemática y de 
+            lectura que se pueden analizar, y sería incorrecto decir que hemos explorado los datos de todas las 
+            áreas de educación chilena.
+        </p>
+        <p>
+            También solo existe una cantidad limitada de información que podemos acceder a través de dataframes, 
+            por ejemplo, no tenemos idea de cómo saber el contexto fuera del colegio de cada joven que realizó 
+            estas pruebas. Aunque hayamos investigado más de 7 mil colegios, no podemos generalizar sobre datos 
+            los cuales no tenemos acceso.
+        </p>
+        <p>
+            Aun así, creemos que contamos con una base de datos suficientemente grande y de bastantes años para 
+            obtener conclusiones acertadas sobre la realidad de nuestro país, y que los casos límite no deberían 
+            influir en cómo deberíamos acercarnos a las problemáticas.
+        </p>
+    </section>
+
+    <!-- SECCIÓN: Soluciones (Agustín) -->
+    <section id="soluciones">
+        <h2>6. Soluciones</h2>
+        <p>Propón ideas para mitigar o resolver los problemas planteados en la sección anterior.</p>
+    </section>
+
+    <!-- SECCIÓN: Bibliografía y Fuentes de Datos (Agustín) -->
+    <section id="bibliografia">
+        <h2>7. Bibliografía y Fuentes de Datos</h2>
+        <p>Lista aquí todas las fuentes que utilizaste para el proyecto.</p>
+    </section>
+
+    <!-- SECCIÓN: Pie de Página -->
+    <footer>
+        <p>Proyecto colaborativo de Juan y Agustín.</p>
+    </footer>
 </body>
 </html>
