@@ -57,6 +57,7 @@
 
         h1,
         h2,
+        h3,
         p,
         li {
             margin-bottom: 10px;
@@ -107,18 +108,137 @@
     <strong>Pandas</strong>, <strong>Numpy</strong>, <strong>Matplotlib</strong>, 
     <strong>Seaborn</strong>
 
-<p>La información que utilizamos fue obtenida directamente de la página oficial 
-    del Ministerio de Educación, que contiene los puntajes SIMCE a nivel nacional, 
-    junto con otras variables valiosas que nos permiten realizar comparaciones 
-    detalladas y precisas para nuestro análisis. Los datos recolectados fueron los siguientes:</p>
+<p>La pagina oficial del ministerio de educacion contiene todos los datos que necesitamos para este
+    estudio, los puntajes SIMCE a nivel nacional, y ademas contiene variables valiosas para comparar
+    mejor nuestros resultados. Para cumplir nuestros objetivos dejamos guardados para en el analisis
+    6 archivos conteniendo varios datos para extraer que nos serviran para el analisis conteniendo los
+    siguientes cursos:
+</p>
 
+<ul>
+<li><strong>Cuartos Basicos 2014</strong></li>
+<li><strong>Cuartos Basicos 2016</strong></li>
+<li><strong>Cuartos Basicos 2022</strong></li>
+<li><strong>Sextos Basicos 2016</strong></li>
+<li><strong>Octavos Basicos 2019</strong></li>
+<li><strong>Segundos Medios 2022</strong></li>
+</ul>
+
+
+<p>Al estar todos en el formato .xlsx, la libreria pandas sera critica en la lectura y manejo rapido
+   de estos datos. Cada uno de estos archivos tienen varias columnas con datos que nos interesan comparar:</p>
+
+   <ul>
+    <li><strong>Nombre del establecimiento</strong></li>
+    <li><strong>Grado socioeconomico</strong></li>
+    <li><strong>Codigo de ruralidad</strong></li>
+    <li><strong>Nombre de la region</strong></li>
+    <li><strong>Nombre de la comuna</strong></li>
+    <li><strong>Nombre de la provincia</strong></li>
+    <li><strong>Promedio de lectura</strong></li>
+    <li><strong>Promedio de matematicas</strong></li>
+    </ul>
 
     </section>
 
     <!-- SECCIÓN: Procesamiento de Datos (Juan) -->
     <section id="procesamiento-datos">
-        <h2>3. Procesamiento de Datos</h2>
-        <p>Explica los métodos que utilizaste para procesar la información recolectada.</p>
+        <h2>Procesamiento de Datos</h2>
+        <h3>Una vez recolectada esa información, pasamos a la parte de procesamiento:</h3>
+        <p>Como los datos ya venian de forma tabular solo hay que seleccionar las columnas que nos interesan
+           creando un DataFrame de Pandas por cada curso, en el que cada fila representa un establecimiento,
+           quedando de la siguiente manera: 
+        </p>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre de la columna</th>
+                    <th>nom_rbd</th>
+                    <th>agno</th>
+                    <th>cod_grupo</th>
+                    <th>cod_rural_rbd</th>
+                    <th>nom_reg_rbd</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Información de la columna</td>
+                    <td>Nombre del establecimiento</td>
+                    <td>Año</td>
+                    <td>Grado socioeconomico</td>
+                    <td>Codigo de ruralidad</td>
+                    <td>Nombre de la region</td>
+                </tr>
+                <tr>
+                    <td>Dato de ejemplo</td>
+                    <td>COLEGIO SAN JUAN</td>
+                    <td>2014</td>
+                    <td>Medio bajo</td>
+                    <td>Urbano</td>
+                    <td>REGIÓN DE LOS LAGOS</td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>nom_com_rbd</th>
+                    <th>nom_pro_rbd</th>
+                    <th>cod_depe2</th>
+                    <th>prom_lect</th>
+                    <th>prom_mate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nombre de la comuna</td>
+                    <td>Nombre de la provincia</td>
+                    <td>Tipo de establecimiento</td>
+                    <td>Promedio de lectura</td>
+                    <td>Promedio de matematicas</td>
+                </tr>
+                <tr>
+                    <td>ANCUD</td>
+                    <td>CHILOÉ</td>
+                    <td>Particular subvencionado</td>
+                    <td>211.0</td>
+                    <td>201.0</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Cabe destacar que prom_lect y prom_mate tienen distintas extensiones segun el curso.</p>
+        <p>Antes de pasar a nuestro analisis y preguntas objetivo, queremos estandarizar los datos que se
+            muestran de manera distinta, como el cod_depe2, cod_grupo y cod_rural, los cuales no estan mostrados
+            de manera numerica en los dataframes de 2014 y 2016, asi que los dejaremos de esta manera</p>
+            <div style="display: flex; justify-content: space-between;">
+                <div>
+                    <h3>cod_grupo:</h3>
+                    <ul>
+                        <li>1.0 = Bajo</li>
+                        <li>2.0 = Medio bajo</li>
+                        <li>3.0 = Medio</li>
+                        <li>4.0 = Medio alto</li>
+                        <li>5.0 = Alto</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>cod_rural:</h3>
+                    <ul>
+                        <li>1.0 = Urbano</li>
+                        <li>2.0 = Rural</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>cod_depe2:</h3>
+                    <ul>
+                        <li>1.0 = Municipal</li>
+                        <li>2.0 = Particular subvencionado</li>
+                        <li>3.0 = Particular pagado</li>
+                        <li>4.0 = Servicio local de educacion</li>
+                    </ul>
+                </div>
+            </div>
+        <p>Con los dataframes leidos y organizados, podemos pasar a la siguiente parte del analisis.</p>
     </section>
 
     <!-- SECCIÓN: Análisis de los Resultados (Agustín) -->
@@ -161,10 +281,23 @@
         <h2>7. Bibliografía y Fuentes de Datos</h2>
         <p>Lista aquí todas las fuentes que utilizaste para el proyecto.</p>
     </section>
+    
+    <!-- SECCIÓN: Repositorios -->
+     <section>
+         <h1>Repositorios</h1>
+         <p>El proyecto cuenta con 2 repositorios, el que tiene el código, y el de la presentación,
+            una vez el código sea público será posible replicar el proyecto; aunque es necesario mucho
+            tiempo de espera para tener toda la información.</p>
+        <ul>
+            <li><a href="https://github.com/Agusrush21/IMT2200-PROYECTO/tree/main" target="_blank">Repositorio con el Codigo</a>.</p></li>
+            <li><a href="https://github.com/jlevipil/Pagina-Proyecto-12" target="_blank">Repositorio con el sitio web</a>.</p></li>
+        </ul>
+
+     </section>
 
     <!-- SECCIÓN: Pie de Página -->
     <footer>
-        <p>Proyecto colaborativo de Juan y Agustín.</p>
+        <p>© 2024 Proyecto de Ciencia de Datos. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
