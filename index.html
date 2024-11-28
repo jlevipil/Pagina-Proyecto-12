@@ -11,7 +11,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #EDEDED;
+            background-color: #c40000;
             color: #333;
         }
 
@@ -45,7 +45,7 @@
         }
 
         tr:nth-child(even) {
-            background-color: rgba(221, 221, 221, 0.7);
+            background-color: rgba(255, 255, 255, 0.897);
         }
 
         img {
@@ -61,13 +61,15 @@
         p,
         li {
             margin-bottom: 10px;
-            color: #512DA8
+            color: #070f7a
         }
     </style>
 </head>
 <body>
     <!-- SECCIÓN: Título -->
     <header>
+        <img src="img/simce.jfif" alt="SIMCE" class="top-left">
+        <img src="img/logo-uc.jpg" alt="UC" class="top-rigth" width="100px">
         <h1>Proyecto de Ciencia de Datos, Grupo 12</h1>
         <h1>Analisis SIMCE en el rendimiento escolar en Chile</h1>
 
@@ -75,7 +77,7 @@
 
     <!-- SECCIÓN: Contexto y Motivación (Agustín) -->
     <section id="contexto-motivacion">
-        <h2>Contexto y Motivación</h2>
+        <h2>1. Contexto y Motivación</h2>
         <p>
             La educación es una herramienta que abre muchas ventanas, pero su mala administración puede 
             dejar a muchos en desigualdad de oportunidades, incluso llegando a reflejar las inequidades 
@@ -249,7 +251,7 @@
 
     <!-- SECCIÓN: Qué Podría Salir Mal (Juan) -->
     <section id="que-podria-salir-mal">
-        <h2>Qué Podría Salir Mal?</h2>
+        <h2>5. ¿Qué Podría Salir Mal?</h2>
         <p>
             Puede que la limitación de datos, especialmente post-pandemia, ya que llevamos muy poco tiempo 
             pasado después de aquella época, nos dé datos que no necesariamente reflejen la situación, ya sea 
@@ -270,16 +272,58 @@
         </p>
     </section>
 
-    <!-- SECCIÓN: Soluciones (Agustín) -->
+    <!-- SECCIÓN: Soluciones (Agustín) |Falta revisión| -->
     <section id="soluciones">
         <h2>6. Soluciones</h2>
-        <p>Propón ideas para mitigar o resolver los problemas planteados en la sección anterior.</p>
+        <p>
+            Tras realizar el análisis sobre los datos podemos concluir que las desigualdades del sistema educativo son en su mayoría 
+            <strong>sistemáticas</strong>, pero que también existen oportunidades claras para generar cambios y cerrar las brechas existentes.
+        </p>
+        
+        <p>
+            Hemos identificado, tras la exploración crítica de datos, los patrones clave que muestran <strong>cuándo</strong> y <strong>dónde</strong> 
+            los puntajes de medición SIMCE bajan, destacando en las zonas más vulnerables y rurales del país 
+            (y no ayuda que la brecha creció post-pandemia). Proponemos las siguientes acciones como las más importantes:
+        </p>
+        
+        <ul>
+            <li>
+                Asignación de recursos adicionales a las comunas de todo el país donde se destaca un mayor porcentaje de vulnerabilidad.
+            </li>
+            <li>
+                Promover la mejora de los establecimientos públicos de educación priorizando una mayor calidad de capacitación de docencia 
+                <strong>prioritariamente</strong> en los sectores donde más se necesiten.
+            </li>
+            <li>
+                Crear nuevos tipos de tests educativos que profundicen en el contexto fuera de los establecimientos para saber qué 
+                otros factores afectan la calidad de enseñanza.
+            </li>
+        </ul>
+        
+        <p>
+            Somos conscientes de que estas propuestas no reflejarán cambios a corto plazo, pero creemos que, en base a lo investigado, 
+            son un excelente punto de partida para cerrar la brecha de disparidad educativa. Lo más importante sobre todo esto, es que 
+            esperamos que nuestro proyecto no sea visto solamente como una exploración de datos, sino como una guía de dónde iniciar cambios 
+            para construir un Chile mejor y más educado.
+        </p>
     </section>
 
     <!-- SECCIÓN: Bibliografía y Fuentes de Datos (Agustín) -->
     <section id="bibliografia">
         <h2>7. Bibliografía y Fuentes de Datos</h2>
-        <p>Lista aquí todas las fuentes que utilizaste para el proyecto.</p>
+        <p>Todas las fuentes de datos he información relacionada a esta fue directamente extraída de las bases que proporciona el gobierno de chile
+            sobre los datos recopilados del SIMCE, ademas agremagamos otras fuentes de informacion para guiarnos en nuestros distintos analisis.
+        </p>
+
+        <ul>
+            <li><a href="https://informacionestadistica.agenciaeducacion.cl/#/bases" 
+                target="_blank">Bases SIMCE</a></li>
+            <li><a href="https://www.radioagricultura.cl/programas/el-agro/las-27-comunas-del-pais-que-son-100-urbanas-y-las-27-que-son-100-rurales-segun-el-analisis-del-ine_20210913/"
+                target="_blank">Informacion de comunas urbanas/rurales</a></li>
+            <li><a href="https://www.agenciaeducacion.cl/simce/" 
+                target="_blank">Agencia de la calidad de educación</a></li>
+            <li>Mandela, N. (s. f.). “La educación es el arma más poderosa que puedes usar para cambiar el mundo.“</li>
+        </ul>
     </section>
     
     <!-- SECCIÓN: Repositorios -->
