@@ -246,7 +246,87 @@
     <!-- SECCIÓN: Análisis de los Resultados (Agustín) -->
     <section id="analisis-resultados">
         <h2>4. Análisis de los Resultados</h2>
-        <p>Aquí puedes detallar los hallazgos más importantes de tu análisis.</p>
+        <p>
+            Con los distintos conjuntos de datos recolectados, podemos responder las preguntas objetivo planteadas:
+            <ol>
+                <li>¿Los resultados SIMCE varian significativamente por comuna?</li>
+                <li>¿Como afecto la pandemia los resultados de la prueba?</li>
+                <li>Existe una mejora o un deterioro en los puntajes al pasar de los años?</li>
+                <li>¿Existe una diferencia notable entre los puntajes de colegios segun su codigo de dependencia?</li>
+                <li>¿Las generaciones (4to-6to-8vo-2do) mantienen su puntaje al pasar de los años?</li>
+                <li>¿Afecta el grupo socioeconomico el puntaje SIMCE?</li>
+                <li>¿Existe mucha diferencia entre los institutos rurales y los urbanos?</li>
+            </ol>
+        </p>
+        
+        <h3>¿Los resultados SIMCE varian significativamente por comuna?</h3>
+        <p>
+            Para poder abarcar esta pregunta tomamos metricas como el promedio y desviacion estandar para una mejor asociacion y relacion de los Datos
+            comparando entre las mejores y peores comunas por año
+        
+            <img src="img/output.png" alt="">
+
+            Los resultados nos indican que:
+            <ul>
+                <li>Vitacura se encuentra en las comunas con mejores resultados en el simce en estos años.</li>
+                <li>La comuna de Antartica cuenta con los mejores resultados promedio en el año 2014.</li>
+                <li>Ollague tuvo el mejor resultado en 2016 pero en 2022 ademas se consagra como la comuna con peores resultados en los años estudiados.</li>
+                <li>Camarones, Alto Biobio y General Lagos cuentan como las peores comunas en dos años distintos.</li>
+            </ul>
+
+            <strong>Podemos decir que si existe una diferencia significativa en los resultados SIMCE dependiendo de la comuna donde se realiza.</strong>
+        </p>
+
+        <h3>¿Como afecto la pandemia los resultados de la prueba?</h3>
+        <p>
+            Debido a la remotidad de ese periodo, no existen datos sobre los SIMCE del 2020 y 2021, 
+            dejandonos el 2019 y el 2022 para comparar estadisticas. 
+            Estos años son clave para la comparacion ya que suceden justo <strong>antes y despues</strong> de la pandemia.
+        
+            <img src="img/output_3.png" alt="">
+
+            Los puntajes del SIMCE de <strong>comprension lectora</strong> sorprendientemente subieron entre el 2019 y el 2022 en todas las regiones, 
+            aunque no podemos garantizar que el mismo efecto se produce para los resultados matematicos, 
+            por lo que es necesario agrupar nuevamente los datos y generar un nuevo analisis.
+
+            <img src="img/output_4.png" alt="">
+
+            A diferencia de comprension lectora, el SIMCE de <strong>matematicas</strong> muestra, en la mayoria de las regiones, un leve decline de promedios post-pandemia. 
+            Aunque la diferencia que se muestra no es tan notoria como la de lectura, no se puede negar el descenso de puntajes.
+
+            Para responder esta pregunta, si. Los puntajes varian antes y despues de pandemia aunque esa varianza dependio del tipo de prueba. Los puntajes de lectura subieron, y los matematicos bajaron.
+        </p>
+
+        <h3>¿Existe una mejora o un deterioro en los puntajes al pasar de los años?</h3>
+        <p>
+            Ya que queremos comparar cursos de un nivel parecido (debido a que comparar distintos cursos puede crear una gran varianza que puede confundir los datos), 
+            lo mejor seria utilizar los datos de los <strong>cuartos basicos</strong>
+
+            <!-- Aca insertar tabla-->
+
+            Primero, comparamos las <strong>materias</strong> por si solas.
+
+            <img src="img/output_5.png" alt="">
+            <img src="img/output_6.png" alt="">
+
+            Una simple observacion nos muestra como los resultados bajaron <strong>considerablemente</strong> en los cuartos basicos entre 2016 y 2022. 
+            Esto lo podemos dejar mas claro añadiendo un grafico con una regresion lineal R2
+
+            <img src="img/output_7.png" alt="">
+            <img src="img/output_8.png" alt="">
+
+            Esto nos deja mas claro que desde el 2014 al 2022, los puntajes SIMCE han <strong>decaído</strong>. Pero, ¿Cuanto exactamente?
+
+            <!-- Aca insertar tabla-->
+             
+            Extrayendo los datos, vemos que del 2016 al 2022 el puntaje promedio bajo en **26 puntos** en matematica, y **19 puntos** en lectura.
+
+            A partir de los graficos y el analisis de ellos, podemos concluir que definitivamente los puntajes SIMCE disminuyeron al pasar de los años.
+        </p>
+
+        <h3>¿Existe una diferencia notable entre los puntajes de colegios segun su codigo de dependencia?</h3>
+
+
     </section>
 
     <!-- SECCIÓN: Qué Podría Salir Mal (Juan) -->
