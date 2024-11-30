@@ -11,7 +11,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #c40000;
+            background-color: #613904e0;
             color: #333;
         }
 
@@ -145,7 +145,7 @@
 
     <!-- SECCIÓN: Procesamiento de Datos (Juan) -->
     <section id="procesamiento-datos">
-        <h2>Procesamiento de Datos</h2>
+        <h2>3. Procesamiento de Datos</h2>
         <h3>Una vez recolectada esa información, pasamos a la parte de procesamiento:</h3>
         <p>Como los datos ya venian de forma tabular solo hay que seleccionar las columnas que nos interesan
            creando un DataFrame de Pandas por cada curso, en el que cada fila representa un establecimiento,
@@ -246,33 +246,24 @@
     <!-- SECCIÓN: Análisis de los Resultados (Agustín) -->
     <section id="analisis-resultados">
         <h2>4. Análisis de los Resultados</h2>
-        <p>
-            Con los distintos conjuntos de datos recolectados, podemos responder las preguntas objetivo planteadas:
-            <ol>
-                <li>¿Los resultados SIMCE varian significativamente por comuna?</li>
-                <li>¿Como afecto la pandemia los resultados de la prueba?</li>
-                <li>Existe una mejora o un deterioro en los puntajes al pasar de los años?</li>
-                <li>¿Existe una diferencia notable entre los puntajes de colegios segun su codigo de dependencia?</li>
-                <li>¿Las generaciones (4to-6to-8vo-2do) mantienen su puntaje al pasar de los años?</li>
-                <li>¿Afecta el grupo socioeconomico el puntaje SIMCE?</li>
-                <li>¿Existe mucha diferencia entre los institutos rurales y los urbanos?</li>
-            </ol>
-        </p>
         
         <h3>¿Los resultados SIMCE varian significativamente por comuna?</h3>
         <p>
             Para poder abarcar esta pregunta tomamos metricas como el promedio y desviacion estandar para una mejor asociacion y relacion de los Datos
             comparando entre las mejores y peores comunas por año
-        
-            <img src="img/output.png" alt="">
+            
+            <ol>
+                <img src="img/output.png" alt="">
+                <img src="img/output_2.png" alt="">
+            </ol>
 
             Los resultados nos indican que:
-            <ul>
-                <li>Vitacura se encuentra en las comunas con mejores resultados en el simce en estos años.</li>
-                <li>La comuna de Antartica cuenta con los mejores resultados promedio en el año 2014.</li>
-                <li>Ollague tuvo el mejor resultado en 2016 pero en 2022 ademas se consagra como la comuna con peores resultados en los años estudiados.</li>
-                <li>Camarones, Alto Biobio y General Lagos cuentan como las peores comunas en dos años distintos.</li>
-            </ul>
+            <ol>
+                Se nota que ne le grafico se tiene a Vitacura como recurrente como mejor comuna en distitnos años en la prueba SIMCE
+                y a la vez podemos notar que las peores comunas se repiten, tales como alto BIO BIO y General Lagos. Esto nos indica que la recurrencia en los resultados del SIMCE
+                se debe a la comuna donde se realiza la evaluación, mostrando una clara diferencia en sus resultados.
+                <!-- dejarlo mas bonito-->
+            </ol>
 
             <strong>Podemos decir que si existe una diferencia significativa en los resultados SIMCE dependiendo de la comuna donde se realiza.</strong>
         </p>
@@ -285,16 +276,16 @@
         
             <img src="img/output_3.png" alt="">
 
-            Los puntajes del SIMCE de <strong>comprension lectora</strong> sorprendientemente subieron entre el 2019 y el 2022 en todas las regiones, 
+            Los puntajes del SIMCE de <strong>comprension lectora</strong> sorprendentemente tendieron a un aumento entre el 2019 y el 2022 en todas las regiones, 
             aunque no podemos garantizar que el mismo efecto se produce para los resultados matematicos, 
             por lo que es necesario agrupar nuevamente los datos y generar un nuevo analisis.
 
             <img src="img/output_4.png" alt="">
 
-            A diferencia de comprension lectora, el SIMCE de <strong>matematicas</strong> muestra, en la mayoria de las regiones, un leve decline de promedios post-pandemia. 
+            A diferencia de comprension lectora, el SIMCE de <strong>matematicas</strong> muestra, en la mayoría de las regiones, una leve disminución de promedios post-pandemia. 
             Aunque la diferencia que se muestra no es tan notoria como la de lectura, no se puede negar el descenso de puntajes.
 
-            Para responder esta pregunta, si. Los puntajes varian antes y despues de pandemia aunque esa varianza dependio del tipo de prueba. Los puntajes de lectura subieron, y los matematicos bajaron.
+            Para responder esta pregunta, si. Los puntajes varian antes y despues de pandemia aunque esa varianza dependio del tipo de prueba.
         </p>
 
         <h3>¿Existe una mejora o un deterioro en los puntajes al pasar de los años?</h3>
@@ -305,26 +296,152 @@
             <!-- Aca insertar tabla-->
 
             Primero, comparamos las <strong>materias</strong> por si solas.
+            <ol>
+                <img src="img/output_5.png" alt="" width="600px" height="600px">
+                <img src="img/output_6.png" alt="" width="600px" height="600px">
+            </ol>
+            <p>
+                Una simple observacion nos muestra como los resultados bajaron <strong>considerablemente</strong> en los cuartos basicos entre 2016 y 2022. 
+                Esto lo podemos dejar mas claro añadiendo un grafico con una regresion lineal (R^2)
+            </p>
+            <ol>
+                <img src="img/output_7.png" alt="" width="600px" height="600px">
+                <img src="img/output_8.png" alt="" width="600px" height="600px">
+            </ol>
 
-            <img src="img/output_5.png" alt="">
-            <img src="img/output_6.png" alt="">
-
-            Una simple observacion nos muestra como los resultados bajaron <strong>considerablemente</strong> en los cuartos basicos entre 2016 y 2022. 
-            Esto lo podemos dejar mas claro añadiendo un grafico con una regresion lineal R2
-
-            <img src="img/output_7.png" alt="">
-            <img src="img/output_8.png" alt="">
-
-            Esto nos deja mas claro que desde el 2014 al 2022, los puntajes SIMCE han <strong>decaído</strong>. Pero, ¿Cuanto exactamente?
+            Visualizando desde el 2014 al 2022 los puntajes SIMCE han ido en <strong>decadencia</strong>, pero ¿Cuanto exactamente?
 
             <!-- Aca insertar tabla-->
              
-            Extrayendo los datos, vemos que del 2016 al 2022 el puntaje promedio bajo en **26 puntos** en matematica, y **19 puntos** en lectura.
+            Extrayendo los datos, vemos que del 2016 al 2022 el puntaje promedio bajo en <strong>26 puntos</strong> en matematica, y <strong>19 puntos</strong> en lectura.
 
-            A partir de los graficos y el analisis de ellos, podemos concluir que definitivamente los puntajes SIMCE disminuyeron al pasar de los años.
+            Podemos concluir que definitivamente los puntajes SIMCE disminuyeron al pasar de los años.
         </p>
 
-        <h3>¿Existe una diferencia notable entre los puntajes de colegios segun su codigo de dependencia?</h3>
+        <h3>¿Existe una diferencia notable entre los puntajes de colegios segun su dependencia?</h3>
+        <p>
+            Analizaremos si hay una relacion entre el tipo de colegio, si es subencionada, privado o estatal y sus puntajes generados.  
+            Veremos el promedio de ambos cursos en el tiempo, primero en los años 2014, 
+            luego en el 2016 y finalmente 2019. Para luego comparalos en total. 
+            Que conste que son los mismos curso de la rendicion del SIMCE. Quiere decir que los estamos siguendo en el tiempo, para ver su mejora, aparte comparamos simpre los 4 basicos para una mayor fiadibilidad de datos.
+
+            <ol>
+                <h4>2014</h4>
+                <img src="img/output_9.png" alt="">
+                <h4>2016</h4>
+                <img src="img/output_10.png" alt="">
+                               
+                <ol>
+                    <table style="width: 500px; border-collapse: collapse; margin: 1;">
+                        <tr><strong>Promedios Matematica</strong></tr>
+                        <tr>
+                            <th>Año</th>
+                            <th>Bajo</th>
+                            <th>Medio</th>
+                            <th>Alto</th>
+                        </tr>
+                            <th>2014</th>
+                            <th>230.85</th>
+                            <th>251.99</th>
+                            <th>287.74</th>
+                        <tr>
+                            <th>2016</th>
+                            <th>227.03</th>
+                            <th>248.63</th>
+                            <th>290.95</th>
+                        </tr>
+                        <tr>
+                            <th>2019</th>
+                            <th>234.56</th>
+                            <th>243.03</th>
+                            <th>258.87</th>
+                        </tr>
+                        <tr>
+                            <th>2022</th>
+                            <th>222.11</th>
+                            <th>237.06</th>
+                            <th>256.50</th>
+                        </tr>
+                    </table>
+
+                    <table style="width: 500px; border-collapse: collapse; margin: 1;">
+                        <tr><strong>Promedios Lenguaje</strong></tr>
+                        <tr>
+                            <th>Año</th>
+                            <th>Bajo</th>
+                            <th>Medio</th>
+                            <th>Alto</th>
+                        </tr>
+                            <th>2014</th>
+                            <th>246.51</th>
+                            <th>262.43</th>
+                            <th>291.63</th>
+                        <tr>
+                            <th>2016</th>
+                            <th>236.97</th>
+                            <th>247.71</th>
+                            <th>277.48</th>
+                        </tr>
+                        <tr>
+                            <th>2019</th>
+                            <th>224.69</th>
+                            <th>227.31</th>
+                            <th>239.82</th>
+                        </tr>
+                        <tr>
+                            <th>2022</th>
+                            <th>222.30</th>
+                            <th>235.08</th>
+                            <th>250.95</th>
+                        </tr>
+                    </table>
+                </ol>
+            </ol>
+            <p>
+                Tras el analisis, hubo un gran diferencia entre los colegios de nivel bajo, medio y alto. Pero logramos que este diferencia se va a cortando con los años. 
+                Los puntajes en promedio son de 10 pts superior por categoria. 
+                Los de bajo tiene -10 que los medio y los altos tienen un +10 en puntaje, en promedio. Aunque cuando los alumnos son mas chico hay una diferencia mayor.
+            </p>
+        </p>
+
+        <h3>¿Las generaciones (4to-6to-8vo-2do) mantienen su puntaje al pasar de los años?</h3>
+        <img src="img/output_12.png" alt="">
+        <p>
+            <ol>
+                <p>
+                    Los graficos de 2014, 2016 y 2019 tienen una cantidad similar y alta de pruebas SIMCE rendidas (eje y: count), mientras que el 2ndo medio de 2022 tiene la cantidad mas baja de pruebas dadas.
+
+                    La curva se mantiene alrededor de los 250 puntos para todos <strong>menos</strong> el 2ndo medio de 2022, el cual el peak de la curva se concentra un poquito mas abajo. 
+                    Al mismo tiempo, los minimos y maximos del 2022 se encuentran en puntos un poco mas altos que los demas (entre 170 y 370), 
+                    mientras que los demas empiezas un poco antes del 150 y terminan antes del 350. En el grafico del 2016 es mas evidente de lo que se habla.
+                </p>
+            </ol>
+            <p>Para visualizarlo de una manera mejor, graficaremos la variacion de puntajes de matematica y lectura</p>
+            <img src="img/output_13.png" alt="" width="600px" height="600px">
+
+            <p>
+                Los puntajes de matematica <strong>suben</strong> respecto al 2014 y se mantienen despues del 2019, 
+                mientras que los de lectura bajan considerablemente respecto al 2014, y suben despues del 2019.
+            </p>
+        </p>
+
+        <h3>¿Afecta el grupo socioeconomico el puntaje SIMCE?</h3>
+        <img src="img/output_15.png" alt="" height="300px" width="625px">
+        <p>
+            Al visuzalzar los resultados podemos analizar que en todos los años existe una diferencia muy marcada entre los distitnos niveles
+            socioeconomico, siendo las clases mas altas las que poseen en promedio un mejor puntaje, lo que concluye que efectivamente va estar influenciado
+            segun el grupo economico del estudiante su rendimiento en el SIMCE por ende en su educación.
+        </p> 
+
+        <h3>¿Existe mucha diferencia entre los institutos rurales y los urbanos?</h3>
+        <p>
+            Primero seleccionamos las comunas rurales y urbanas, segun un articulo de radioagricultura.cl
+            <img src="img/output_16.png" alt="">
+            Al analizar ambos graficos podemos decir que si puede haber una diferencia entre los puntajes de de comunas rurales y urbanas en la prueba de matematicas, pero en la de lenguaje no se ve una gran diferencia, 
+            en el caso que si se ve una gran diferencia es en los segundos medios, 
+            talvez esto sea por la materia mas compleja que se les enseña
+            , o talvez la pandemia afecto en mayor medida a las comunas rurales.
+        </p>
 
 
     </section>
